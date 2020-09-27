@@ -16,26 +16,35 @@ struct ScoreboardViewModel: View {
         VStack {
             HStack {
                 Text("Player Name")
-                    .padding(.horizontal)
+                    .underline()
+                    .frame(maxWidth: .infinity)
                     .font(.headline)
                 Text("Score")
-                    .padding(.horizontal)
+                    .underline()
+                    .frame(maxWidth: .infinity)
                     .font(.headline)
                 Text("Playing")
-                    .padding(.horizontal)
-
+                    .underline()
+                    .frame(maxWidth: .infinity)
                     .font(.headline)
             }
+            .padding(.top)
+            .padding(.bottom)
             .foregroundColor(Color.white)
         
             VStack {
                 ForEach(players.data) { playerData in
                     HStack {
                         Text(playerData.name)
+                            .frame(maxWidth: .infinity)
+
                         Text("\(playerData.score)")
+                            .frame(maxWidth: .infinity)
+
                         Text(playerData.playing)
+                            .frame(maxWidth: .infinity)
+
                     }
-                    .frame(minWidth: 350)
                     .foregroundColor(Color.white)
                 }
             }
@@ -54,15 +63,8 @@ struct PlayerDetailGrid: View {
                 .font(.headline)
             Text("Playing")
                 .padding(.horizontal)
-
                 .font(.headline)
         }
         .foregroundColor(Color.white)
-    }
-}
-
-struct ScoreboardViewModel_Previews: PreviewProvider {
-    static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
     }
 }
