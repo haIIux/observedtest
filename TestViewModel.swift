@@ -59,6 +59,7 @@ struct TestViewModel: View {
                     .font(.headline)
                     .foregroundColor(Color.white)
             }
+            .padding(.top)
         }
     }
     //MARK: - Constants
